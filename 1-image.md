@@ -14,13 +14,19 @@ docker pull <nombre imagen>:<tag>
 ```
 
 Descargar la imagen **hello-world**
-# COMPLETAR
+```
+docker pull hello-world
+```
+![Descarga hello-world](images/1-1.jpeg)
 
 **¿Qué es nginx?**
-# COMPLETAR 
+NGINX es un software de código abierto que se utiliza principalmente como servidor web de alto rendimiento. También es ampliamente utilizado como proxy inverso (reverse proxy), balanceador de carga (load balancer) y caché HTTP. Es conocido por su estabilidad, bajo consumo de recursos y capacidad para manejar una gran cantidad de conexiones concurrentes.
 
 Descargar la imagen  **nginx** en la versión **alpine**
-# COMPLETAR
+```
+docker pull nginx:alpine
+```
+![Descarga nginx-alpine](images/1-2.jpeg)
 
 ### Listar imágenes
 
@@ -28,7 +34,7 @@ Descargar la imagen  **nginx** en la versión **alpine**
 docker images
 ```
 
-# COLOCAR UNA CAPTURA DE PANTALLA DEL RESULTADO 
+![Listar imágenes](images/1-3.jpeg)
 
 **Identificadores**
 
@@ -43,10 +49,13 @@ docker inspect <nombre imagen>:<tag>
 ```
 
 Inspeccionar la imagen hello-world 
-# COMPLETAR
+```
+docker inspect hello-world
+```
+![Inspect hello-world](images/1-4.jpeg)
 
 **¿Con qué algoritmo se está generando el ID de la imagen**
-# COMPLETAR
+El ID de la imagen se genera utilizando el algoritmo de función hash criptográfica SHA-256.
 
 ### Filtrar imágenes
 
@@ -63,7 +72,10 @@ docker rmi <nombre imagen>:<tag>
 ```
 
 Eliminar la imagen hello-world 
-# COMPLETAR
+```
+docker rmi hello-world
+```
+![Eliminar hello-world](images/1-5.jpeg)
 
 -f: Es la opción para forzar la eliminación de la imagen incluso si hay contenedores en ejecución que utilizan esa imagen.
 Cuando eliminas una imagen Docker, Docker no elimina automáticamente los contenedores que se han creado a partir de esa imagen. Esto significa que, aunque hayas eliminado la imagen, el contenedor seguirá ejecutándose normalmente.  
