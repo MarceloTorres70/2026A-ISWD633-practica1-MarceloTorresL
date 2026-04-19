@@ -4,12 +4,15 @@
 ```
 docker exec <nombre contenedor> <comando> <argumentos opcionales>
 ```
-# COMPLETAR
 ### ¿Para qué se usa el comando ls?
+Se utiliza para listar los archivos y directorios dentro del sistema de archivos.
 ### ¿Para qué sirve el argumento -l junto al comando ls?
+Sirve para mostrar la lista en formato detallado o largo, mostrando información como permisos, número de enlaces, propietario, grupo, tamaño y fecha de modificación.
 ### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
-# COMPLETAR
-# COLOCAR UNA CAPTURA DE PANTALLA
+```
+docker exec mi-jenkins ls -l
+```
+![Captura ls -l](images/4-1.jpeg)
 
 ### Para ejecutar un shell interactivo en un contenedor de Docker especificado.
 El comando **docker exec** te permite acceder a la sesión shell de un contenedor en ejecución, estarás dentro del contenedor y podrás ejecutar comandos como si estuvieras en una terminal normal. 
@@ -48,7 +51,7 @@ Ejecutar
 ```
 whoami
 ```
-# COLOCAR UNA CAPTURA DE PANTALLA
+![Captura bash interactivo](images/4-2.jpeg)
 
 **Si se visualiza el mensaje command not found, considerar**
 El problema se debe a que no se ha asignado un terminal de salida al contenedor al ejecutar el comando. Cuando usas docker exec -i jenkins-server /bin/bash en Windows, el comando se ejecuta pero no hay un terminal asignado para mostrar la salida del comando.
@@ -68,9 +71,13 @@ docker exec -it <nombre contenedor> <programa o comando>
 
 ### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
 
-# COMPLETAR
+```
+docker exec -it mi-jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+```
 
 ### Colocar una captura de pantalla de la ventana que aparece después de colocar la contraseña.
+
+![Ventana Customize Jenkins](images/4-3.jpeg)
 
 **Para este punto no es necesario continuar con la instalación de Jenkins**
 
